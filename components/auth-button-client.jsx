@@ -22,8 +22,6 @@ export default function AuthButtonClient(session) {
 		router.refresh();
 	}
 
-	console.log("session in btnC is :", session.session)
-
 	return session.session ? <Button onClick={handleSignOut}>Logout</Button> : <Button onClick={handleSignIn}>Login</Button>
 
 }
