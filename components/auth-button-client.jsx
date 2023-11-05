@@ -3,6 +3,7 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { Button } from "./ui/button"
 import { useRouter } from "next/navigation"
+import { Github } from "lucide-react"
 
 export default function AuthButtonClient(session) {
 	const supabase = createClientComponentClient()
@@ -22,6 +23,10 @@ export default function AuthButtonClient(session) {
 		router.refresh();
 	}
 
-	return session.session ? <Button onClick={handleSignOut}>Logout</Button> : <Button onClick={handleSignIn}>Login</Button>
+	return (
+		<Button variant="secondary" onClick={handleSignIn}>
+			<Github className="mr-2 h-4 w-4" /> Login with Github
+		</Button>
+	)
 
 }

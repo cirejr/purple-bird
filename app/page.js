@@ -23,7 +23,7 @@ export default async function Home() {
 	}
 
   return (
-    <main className="flex min-h-screen flex-col items-center gap-3 p-24 bg-slate-800 text-gray-400">
+    <main className="flex min-h-screen flex-col items-center gap-3 p-24 text-gray-400">
 		<AuthButtonServer />
 		<NewTweet />
 		<Tweets tweets={tweets} />

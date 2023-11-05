@@ -1,6 +1,7 @@
 import { Inter as FontSans } from "next/font/google"
 import './globals.css'
 import { cn } from "@/lib/utils"
+import { Providers } from "@/providers/providers"
  
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -14,8 +15,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-     	<body className={cn("font-sans antialiased",fontSans.variable)}>{children}</body>
+    <html lang="en" className="dark">
+     	<body className={cn("font-sans antialiased",fontSans.variable)}>
+			<Providers>
+				{children}
+			</Providers>
+		</body>
     </html>
   )
 }
